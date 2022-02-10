@@ -10,6 +10,7 @@ const root = new Vue (
         el: "#root",
         data: {
             active: 0,
+            autoscroll: null,
             items: [
                 {
                     url:'img/01.jpg',
@@ -39,7 +40,9 @@ const root = new Vue (
             ],
 
         },
+
          
+        
         methods: {
             indietro(){
                 this.active--;
@@ -54,7 +57,7 @@ const root = new Vue (
                 }
             },
             autoSlide: function(){
-                setInterval(() => {
+                this.autoscroll = setInterval(() => {
                     this.active++;
                     if (this.active == this.items.length) {
                         this.active = 0;
@@ -65,10 +68,11 @@ const root = new Vue (
                 this.active = indice;
             },
             stopAutoScroll(){
-                clearInterval(this.autoSlide);
+                this.autoscroll = null;
             }         
         },
 
+        
         created(){
             this.autoSlide();
         },
