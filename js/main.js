@@ -59,8 +59,11 @@ const root = new Vue (
                     if (this.active == this.items.length) {
                         this.active = 0;
                     } 
-                }, 1000);
-            },            
+                }, 3000);
+            },
+            seleziona(indice){
+                this.active = indice;
+            }           
         },
 
         created(){
