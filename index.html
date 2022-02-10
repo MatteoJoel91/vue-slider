@@ -9,7 +9,7 @@
 </head>
 <body>
    <div class="container" id="root">
-        <div class="items" @mouseover="stopAutoScroll">
+        <div class="items" @mouseover="stopAutoScroll" @mouseleave="autoSlide">
             
             <div class="item active">
                 <img  :src="items[active].url" alt="">
