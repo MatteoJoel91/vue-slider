@@ -50,28 +50,31 @@ const root = new Vue (
                     this.active = this.items.length -1;
                 }
             },
+
             avanti(){
                 this.active++;
                 if (this.active == this.items.length) {
                     this.active = 0;
                 }
             },
-            autoSlide: function(){
+
+            autoSlide(){
                 this.autoscroll = setInterval(() => {
-                    this.active++;
-                    if (this.active == this.items.length) {
-                        this.active = 0;
-                    } 
+                    this.avanti();
                 }, 3000);
             },
+
             seleziona(indice){
                 this.active = indice;
             },
+
             stopAutoScroll(){
+                clearInterval(this.autoscroll);
                 this.autoscroll = null;
-            }         
+            }   
         },
 
+        
         
         created(){
             this.autoSlide();

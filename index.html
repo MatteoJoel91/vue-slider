@@ -9,9 +9,9 @@
 </head>
 <body>
    <div class="container" id="root">
-        <div class="items" @focus="stopAutoScroll">
+        <div class="items" @mouseover="stopAutoScroll">
             
-            <div class="item active" >
+            <div class="item active">
                 <img  :src="items[active].url" alt="">
                 <div class="text">
                     <h3>{{items[active].name}}</h3>
