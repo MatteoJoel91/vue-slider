@@ -25,11 +25,10 @@
             <div class="prev" @click="indietro"></div>
             <div class="next" @click="avanti"></div>
 
-            <div class="thumb" :class="active" v-for="(item, indice) in items">
+            <div class="thumb" :class="(active==indice) ? 'active' : '' " v-for="(item, indice) in items">
                 <img :src="item.url" alt="">
             </div> 
- 
-            
+           
         </div>
    </div>
 
