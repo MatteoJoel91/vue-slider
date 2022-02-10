@@ -9,10 +9,10 @@
 </head>
 <body>
    <div class="container" id="root">
-        <div class="items">
+        <div class="items" @focus="stopAutoScroll">
             
-            <div class="item active">
-                <img :src="items[active].url" alt="">
+            <div class="item active" >
+                <img  :src="items[active].url" alt="">
                 <div class="text">
                     <h3>{{items[active].name}}</h3>
                     <p>{{items[active].text}}</p>
@@ -26,7 +26,7 @@
             <div class="next" @click="avanti"></div>
 
             <div class="thumb" @click="seleziona(indice)" :class="(active==indice) ? 'active' : '' " v-for="(item, indice) in items">
-                <img  :src="item.url" alt="">
+                <img :src="item.url" alt="">
             </div> 
            
         </div>

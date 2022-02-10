@@ -63,7 +63,10 @@ const root = new Vue (
             },
             seleziona(indice){
                 this.active = indice;
-            }           
+            },
+            stopAutoScroll(){
+                clearInterval(this.autoSlide);
+            }         
         },
 
         created(){
